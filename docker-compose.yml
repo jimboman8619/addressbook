@@ -1,0 +1,18 @@
+version: '3.1'
+
+services:
+
+  db:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    env_file:
+      - src/main/resources/application.properties
+    ports:
+      - "3306:3306"
+
+
+#
+# Usages:
+# docker-compose -f docker-compose.yml build --no-cache
+# docker-compose -f docker-compose.yml up --build
+# docker-compose -f docker-compose.yml down --rmi local --remove-orphans
